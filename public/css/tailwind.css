@@ -16,6 +16,6 @@
 	}
 
 	.form-input {
-		@apply appearance-none border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 focus:outline-none focus:border-indigo-500 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100;
+		@apply appearance-none border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 focus:outline-none focus:border-transparent focus:ring-indigo-500 focus:ring-offset-0 focus:ring-offset-gray-100 text-sm;
 	}
 }

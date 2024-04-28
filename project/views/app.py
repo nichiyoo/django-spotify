@@ -12,3 +12,6 @@ def register(request) -> HttpResponse:
 
 def search(request) -> HttpResponse:
     return render(request, "pages/search.html")
+
+def membership(request) -> HttpResponse:
+    return render(request, "pages/membership.html")

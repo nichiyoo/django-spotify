@@ -26,4 +26,6 @@ urlpatterns = [
     path("artists/", include("project.routes.artists")),
     path("playlists/", include("project.routes.playlists")),
     path("podcasts/", include("project.routes.podcasts")),
+
+    path("podcaster/", include("podcaster.urls")),
 ]

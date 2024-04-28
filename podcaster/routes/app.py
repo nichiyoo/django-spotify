@@ -1,7 +1,7 @@
 from django.urls import path
-import project.views.app as app
+import podcaster.views.app as app
 
-from project.constant import ROOT
+from podcaster.constant import ROOT
 app_name = "app"
 
 urlpatterns = [
@@ -9,5 +9,4 @@ urlpatterns = [
     path('login/', app.login, name='login'),
     path('register/', app.register, name='register'),
     path('search/', app.search, name='search'),
-    path('membership/', app.membership, name='membership'),
 ]

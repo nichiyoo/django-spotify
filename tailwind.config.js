@@ -5,6 +5,8 @@ module.exports = {
     content: [
         "./templates/**/*.html",
         "./server/**/*.py",
+        "./podcaster/templates/**/*.html",
+        "./podcaster/**/*.py",
     ],
     theme: {
         extend: {
@@ -16,6 +18,6 @@ module.exports = {
             }
         },
     },
-    plugins: [],
+    plugins: [require('@tailwindcss/forms')],
 }
 
