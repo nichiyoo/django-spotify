@@ -4,20 +4,12 @@
 {% block content %}
 	<nav class="flex items-center justify-between mb-10">
 		<div class="flex items-center space-x-2 text-sm text-gray-500">
-			<a href="{% url 'app:index' %}">Dashboard</a>
+			<a href="{% url 'app:dashboard' %}">Dashboard</a>
 			<span>/</span>
 			<a href="{% url 'albums:index' %}" class="text-indigo-500">Albums</a>
 		</div>
 
-		<div class="flex items-center space-x-4 text-sm text-gray-500">
-			<a href="#">Username</a>
-			<div class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center rounded-full">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
-					<circle cx="12" cy="8" r="5" />
-					<path d="M20 21a8 8 0 0 0-16 0" />
-				</svg>
-			</div>
-		</div>
+		{% include 'partials/profile.html' %}
 	</nav>
 
 	<section id="featured" class="mb-10">
@@ -26,7 +18,7 @@
 		<a href="{% url 'albums:view' '1' %}">
 			<div class="w-full rounded-3xl overflow-hidden bg-orange-500 text-white grid lg:grid-cols-2 gap-10 items-center">
 				<div class="flex flex-col space-y-4 p-10 order-1 lg:order-0">
-					<span class="font-medium text-sm uppercase">The Smiths</span>
+					<span class="font-medium text-sm uppercase">Albums</span>
 					<h1 class="text-5xl font-bold">Louder Than Bombs</h1>
 					<p class="text-sm line-clamp-3">Louder Than Bombs is a compilation album by English rock band the Smiths, released as a double album in March 1987 by their American record company, Sire Records</p>
 				</div>

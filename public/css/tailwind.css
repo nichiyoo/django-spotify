@@ -18,4 +18,17 @@
 	.form-input {
 		@apply appearance-none border border-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 focus:outline-none focus:border-transparent focus:ring-indigo-500 focus:ring-offset-0 focus:ring-offset-gray-100 text-sm;
 	}
+
+	.center {
+		@apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+	}
+
+	@keyframes play {
+		0% {
+			width: 0;
+		}
+		100% {
+			width: 100%;
+		}
+	}
 }

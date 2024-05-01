@@ -4,22 +4,14 @@
 {% block content %}
 	<nav class="flex items-center justify-between mb-10">
 		<div class="flex items-center space-x-2 text-sm text-gray-500">
-			<a href="{% url 'app:index' %}">Dashboard</a>
+			<a href="{% url 'app:dashboard' %}">Dashboard</a>
 			<span>/</span>
 			<a href="{% url 'albums:index' %}">Albums</a>
 			<span>/</span>
 			<a href="{% url 'albums:view' '1' %}" class="text-indigo-500">The Smiths</a>
 		</div>
 
-		<div class="flex items-center space-x-4 text-sm text-gray-500">
-			<a href="#">Username</a>
-			<div class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center rounded-full">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
-					<circle cx="12" cy="8" r="5" />
-					<path d="M20 21a8 8 0 0 0-16 0" />
-				</svg>
-			</div>
-		</div>
+		{% include 'partials/profile.html' %}
 	</nav>
 
 	<section id="featured" class="mb-10">
@@ -27,10 +19,15 @@
 			<img src="{% static 'images/the-smiths.jpg' %}" class="h-full w-full object-cover" />
 		</div>
 
-		<div class="flex flex-col space-y-2">
-			<span class="font-medium text-sm text-indigo-500 uppercase">The Smiths</span>
+		<div class="flex flex-col space-y-2 mb-6">
+			<span class="font-medium text-sm text-indigo-500 uppercase">Albums</span>
 			<h1 class="text-5xl font-bold">Louder Than Bombs</h1>
 			<p class="text-sm text-gray-500">Louder Than Bombs is a compilation album by English rock band the Smiths, released as a double album in March 1987 by their American record company, Sire Records</p>
+		</div>
+
+		<div class="flex items-center space-x-4">
+			<span class="px-4 py-2 rounded-full text-sm bg-gray-200 text-gray-500">10 Total Songs</span>
+			<span class="px-4 py-2 rounded-full text-sm bg-gray-200 text-gray-500">32:00 Total Duration</span>
 		</div>
 	</section>
 
@@ -39,12 +36,13 @@
 			<h2 class="font-semibold">Songs List</h2>
 
 			<div class="flex items-center space-x-4">
-				<button class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center">
+				<button class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center group" title="Play All" role="button">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white">
 						<polygon points="6 3 20 12 6 21 6 3" />
 					</svg>
+					<span class="sr-only">Play All</span>
 				</button>
-				<button class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center">
+				<button class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center" title="Add to Playlist" role="button">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white">
 						<path d="M11 12H3" />
 						<path d="M16 6H3" />
@@ -52,6 +50,7 @@
 						<path d="M18 9v6" />
 						<path d="M21 12h-6" />
 					</svg>
+					<span class="sr-only">Add to Playlist</span>
 				</button>
 			</div>
 		</div>
@@ -70,15 +69,7 @@
 					{% for i in '0123456789'|make_list %}
 						<tr class="bg-white [&>td]:px-4 [&>td]:py-3 border-t border-gray-200">
 							<td>
-								<div class="flex items-center space-x-2">
-									<button class="w-8 h-8 rounded-lg hover:bg-gray-200 flex items-center justify-center">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
-											<circle cx="12" cy="12" r="1" />
-											<circle cx="19" cy="12" r="1" />
-											<circle cx="5" cy="12" r="1" />
-										</svg>
-									</button>
-								</div>
+								{% include 'partials/action.html' %}
 							</td>
 							<td>
 								<h3 class="text-sm font-semibold">The Smiths</h3>

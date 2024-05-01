@@ -1,8 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def index(request) -> HttpResponse:
-    return render(request, "pages/home.html")
+def dashboard(request) -> HttpResponse:
+    return render(request, "pages/dashboard.html")
+
+def landing(request) -> HttpResponse:
+    return render(request, "pages/auth/landing.html")
 
 def login(request) -> HttpResponse:
     return render(request, "pages/auth/login.html")
@@ -15,3 +18,6 @@ def search(request) -> HttpResponse:
 
 def membership(request) -> HttpResponse:
     return render(request, "pages/membership.html")
+
+def player(request) -> HttpResponse:
+    return render(request, "pages/player.html")

@@ -4,20 +4,12 @@
 {% block content %}
 	<nav class="flex items-center justify-between mb-10">
 		<div class="flex items-center space-x-2 text-sm text-gray-500">
-			<a href="{% url 'podcaster:app:index' %}">Dashboard</a>
+			<a href="{% url 'podcaster:app:dashboard' %}">Dashboard</a>
 			<span>/</span>
 			<a href="{% url 'podcaster:podcasts:index' %}" class="text-green-500">Podcasts</a>
 		</div>
 
-		<div class="flex items-center space-x-4 text-sm text-gray-500">
-			<a href="#">Username</a>
-			<div class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center rounded-full">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
-					<circle cx="12" cy="8" r="5" />
-					<path d="M20 21a8 8 0 0 0-16 0" />
-				</svg>
-			</div>
-		</div>
+		{% include 'partials/profile.html' %}
 	</nav>
 
 	<section id="podcasts" class="mb-10">
@@ -69,15 +61,7 @@
 					{% for i in '0123456789'|make_list %}
 						<tr class="bg-white [&>td]:px-4 [&>td]:py-3 border-t border-gray-200">
 							<td>
-								<div class="flex items-center space-x-2">
-									<button class="w-8 h-8 rounded-lg hover:bg-gray-200 flex items-center justify-center">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
-											<circle cx="12" cy="12" r="1" />
-											<circle cx="19" cy="12" r="1" />
-											<circle cx="5" cy="12" r="1" />
-										</svg>
-									</button>
-								</div>
+								{% include 'partials/action.html' %}
 							</td>
 							<td>
 								<h3 class="text-sm font-semibold">What is django?</h3>

@@ -4,20 +4,12 @@
 {% block content %}
 	<nav class="flex items-center justify-between mb-10">
 		<div class="flex items-center space-x-2 text-sm text-gray-500">
-			<a href="{% url 'app:index' %}">Dashboard</a>
+			<a href="{% url 'app:dashboard' %}">Dashboard</a>
 			<span>/</span>
 			<a href="{% url 'artists:index' %}" class="text-indigo-500">Artists</a>
 		</div>
 
-		<div class="flex items-center space-x-4 text-sm text-gray-500">
-			<a href="#">Username</a>
-			<div class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center rounded-full">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
-					<circle cx="12" cy="8" r="5" />
-					<path d="M20 21a8 8 0 0 0-16 0" />
-				</svg>
-			</div>
-		</div>
+		{% include 'partials/profile.html' %}
 	</nav>
 
 	<section id="featured" class="mb-10">
@@ -26,7 +18,7 @@
 		<a href="{% url 'artists:view' '1' %}">
 			<div class="w-full rounded-3xl overflow-hidden bg-yellow-500 text-white grid lg:grid-cols-2 gap-10 items-center">
 				<div class="flex flex-col space-y-4 p-10 order-1 lg:order-0">
-					<span class="font-medium text-sm uppercase">Band Group</span>
+					<span class="font-medium text-sm uppercase">Artists</span>
 					<h1 class="text-5xl font-bold">Nirvana</h1>
 					<p class="text-sm line-clamp-3">Nirvana was an American rock band formed in Aberdeen, Washington, in 1987. Founded by lead singer and guitarist Kurt Cobain and bassist Krist Novoselic, the band went through a succession of drummers, most notably Chad Channing, before recruiting Dave Grohl in 1990.</p>
 				</div>
